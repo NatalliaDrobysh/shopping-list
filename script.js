@@ -2,14 +2,14 @@ const sendInput = document.querySelector('#input');
 sendInput.addEventListener('keydown', function(event) {
         if(event.key == 'Enter' && sendInput.value != "") {
           const items = document.querySelector('.items');
-          const listElements = document.createElement('li');
-          items.append(listElements);
-          listElements.append(sendInput.value);
+          const listElement = document.createElement('li');
+          items.append(listElement);
+          listElement.textContent = sendInput.value;
           
           sendInput.value = "";
 
-          listElements.addEventListener('click', function(){
-          listElements.classList.toggle('done');
+          listElement.addEventListener('click', function(){
+          listElement.classList.toggle('done');
           })
         }
  
